@@ -1,66 +1,43 @@
-## Foundry
+# StudentData Smart Contract
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A simple Solidity smart contract for storing and managing student information on the blockchain.
 
-Foundry consists of:
+## Contract Details
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- **Contract Address:** `0xd235B90dc929f7B061EAefdE0C8f020B3Cff47D7`
+- **Network:** Avalanche Fuji Testnet
+- **Chain ID:** 43113
+- **Explorer:** [View on Snowtrace](https://testnet.snowtrace.io/address/0xd235B90dc929f7B061EAefdE0C8f020B3Cff47D7)
 
-## Documentation
+## Features
 
-https://book.getfoundry.sh/
+- Store student name and age
+- Update student age
+- Retrieve student information
+- Public access to student data
 
-## Usage
+## Contract Functions
 
-### Build
+- `name` - Returns the student's name
+- `age` - Returns the student's age
+- `updateAge(uint _newAge)` - Updates the student's age
+- `getStudent()` - Returns both name and age
 
-```shell
-$ forge build
+## Deployment
+
+Deployed using Foundry on Avalanche Fuji testnet.
+
+### Prerequisites
+
+- [Foundry](https://book.getfoundry.sh/getting-started/installation)
+- Fuji testnet AVAX (from [Avalanche Faucet](https://faucet.avax.network/))
+
+### Deploy Command
+
+```bash
+forge script script/DeployStudentData.s.sol --rpc-url $fuji_Rpc --private-key $PRIVATE_KEY --broadcast
 ```
 
-### Test
+## License
 
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+MIT
